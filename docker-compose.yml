@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  hello-rest:
+#    build:
+#      context: .
+    image: aleksinrzn/aleksin-registry:srh
+    volumes:
+      - c:/Users/HIPER/DockerData/RestHello:/logs
+    ports:
+      - "8087:8080"
