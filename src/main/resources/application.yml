@@ -1,0 +1,8 @@
+server:
+  port: 8080
+
+app:
+  datasource:
+    jdbc-url: jdbc:oracle:thin:@localhost:1521:XE
+    username: super
+    password: abcd1234
