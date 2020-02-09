@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
+import java.util.UUID
+
 @RestController
 @RequestMapping("api")
 class HelloResource {
@@ -14,6 +16,6 @@ class HelloResource {
     @GetMapping(value = "/hello/{message}")
     fun hello(@PathVariable message: String): String{
         logger.info("GET api/hello/$message")
-        return "Hello $message!"
+        return "Hello, $message! Your guid: ${UUID.randomUUID().toString()}"
     }
 }
