@@ -16,6 +16,6 @@ class HelloResource {
     @GetMapping(value = "/hello/{message}")
     fun hello(@PathVariable message: String): String{
         logger.info("GET api/hello/$message")
-        return "Hello, $message! Your guid: ${UUID.randomUUID().toString()}"
+        return "Hi, $message! Your guid: ${UUID.randomUUID().toString()}"
     }
 }
