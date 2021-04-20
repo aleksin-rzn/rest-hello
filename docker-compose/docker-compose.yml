@@ -1,0 +1,29 @@
+version: '3.1'
+
+services:
+  docker-rest:
+    container_name: docker-rest-api
+    image: docker-rest:1.0
+    environment:
+      - LOG_LEVEL=${APP_LOG_LEVEL}
+      - JDBC_URL=${APP_JDBC_URL}/${DB_NAME}?currentSchema=${DB_SCHEMA}
+      - JDBC_USER=${DB_ADMIN_USER}
+      - JDBC_PASS=${DB_ADMIN_PASS}
+    depends_on:
+      - docker-rest-db
+    volumes:
+      - c:/Users/YOUR_USER/logs:/usr/src/logs
+    ports:
+      - "8084:8080"
+
+  docker-rest-db:
+    container_name: docker-rest-db
+    image: postgres:11
+    environment:
+      - POSTGRES_DB=${DB_NAME}
+      - POSTGRES_USER=${DB_ADMIN_USER}
+      - POSTGRES_PASSWORD=${DB_ADMIN_PASS}
+    ports:
+      - "5433:5432"
+    volumes:
+      - ./db-init:/docker-entrypoint-initdb.d/

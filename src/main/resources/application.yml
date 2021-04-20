@@ -1,8 +1,8 @@
 server:
   port: 8080
 
-app:
+spring:
   datasource:
-    jdbc-url: jdbc:oracle:thin:@localhost:1521:XE
-    username: super
-    password: abcd1234
+    url: jdbc:postgresql://localhost:5433/docker_db?currentSchema=my_schema
+    username: docker_user
+    password: docker_pass

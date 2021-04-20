@@ -14,7 +14,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.1.12.RELEASE</version>
+		<version>2.4.2</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
@@ -22,7 +22,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
-		<kotlin.version>1.2.71</kotlin.version>
+		<kotlin.version>1.4.21</kotlin.version>
 		<ext.version>1.0</ext.version>
 	</properties>
 
@@ -48,15 +48,11 @@
 			<artifactId>kotlin-reflect</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>com.zaxxer</groupId>
-			<artifactId>HikariCP</artifactId>
-			<version>3.4.5</version>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>42.2.19</version>
 		</dependency>
-		<dependency>
-			<groupId>com.oracle</groupId>
-			<artifactId>ojdbc8</artifactId>
-			<version>19.7</version>
-		</dependency>
+
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -72,7 +68,7 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<version>2.1.12.RELEASE</version>
+				<version>2.4.2</version>
 			</plugin>
 			<plugin>
 				<artifactId>kotlin-maven-plugin</artifactId>
